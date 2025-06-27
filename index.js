@@ -46,7 +46,7 @@ async function run() {
     });
 
     app.get("/latest-plants", async (req, res) => {
-      const cursor = plantCollection.find().sort({ createdAt: -1 }).limit(6);
+      const cursor = plantCollection.find().sort({ createdAt: -1 }).limit(8);
       const plants = await cursor.toArray();
       res.send(plants);
     });
